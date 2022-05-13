@@ -49,8 +49,8 @@ public class RecycleViewCustomerAdapter extends RecyclerView.Adapter<RecycleView
 
     @Override
     public void onBindViewHolder(@NonNull CustomerViewHolder holder, int position) {
-        CustomerModel model =modelList.get(position);
-        holder.id.setText(model.getId()+"");
+        CustomerModel model = modelList.get(position);
+        holder.id.setText(model.getId() + "");
         holder.name.setText(model.getName());
         holder.address.setText(model.getAddress());
         holder.phone.setText(model.getPhone());
@@ -62,6 +62,9 @@ public class RecycleViewCustomerAdapter extends RecyclerView.Adapter<RecycleView
         return modelList.size();
     }
 
+    public void reload() {
+        notifyDataSetChanged();
+    }
 
     public class CustomerViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
 

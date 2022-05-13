@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
@@ -30,6 +31,7 @@ public class CustomerFragment extends Fragment implements RecycleViewCustomerAda
 
     private RecycleViewCustomerAdapter adapter;
     private RecyclerView recyclerView;
+    private Button buttonCreateCustomer;
 
     @Nullable
     @Override
@@ -41,7 +43,9 @@ public class CustomerFragment extends Fragment implements RecycleViewCustomerAda
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
         recyclerView = view.findViewById(R.id.recyclerViewCustomer);
+        buttonCreateCustomer = view.findViewById(R.id.buttonCreateCustomer);
         adapter = new RecycleViewCustomerAdapter();
+        adapter.reload();
         adapter.setItemListener(this);
 
         CustomerAPI.api.findAll().enqueue(new Callback<CustomerResponse>() {
@@ -58,6 +62,14 @@ public class CustomerFragment extends Fragment implements RecycleViewCustomerAda
             @Override
             public void onFailure(Call<CustomerResponse> call, Throwable t) {
                 Toast.makeText(getContext(), "Call API error", Toast.LENGTH_SHORT).show();
+            }
+        });
+
+        buttonCreateCustomer.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(getActivity(), AddActivity.class);
+                startActivity(intent);
             }
         });
     }
