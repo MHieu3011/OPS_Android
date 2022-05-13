@@ -12,45 +12,53 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        android:weightSum="10">
+        android:weightSum="13">
 
 
         <TextView
-            android:id="@+id/textViewIdProduct"
+            android:id="@+id/textViewIdOrder"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:layout_weight="1"
-            android:text="1"
+            android:text="10"
             android:textSize="16dp"
             android:textStyle="bold" />
 
-
         <TextView
-            android:id="@+id/textViewPriceProduct"
+            android:id="@+id/textViewCustomerIdOrder"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_gravity="center"
             android:layout_weight="3"
-            android:text="123456"
+            android:text="DO MINH HIEU"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/textViewProductIdOrder"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="right"
+            android:layout_weight="3"
+            android:text="HA NOI"
             android:textColor="#9C27B0"
             android:textSize="20dp" />
 
         <TextView
-            android:id="@+id/textViewTypeProduct"
+            android:id="@+id/textViewAmountOrder"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="3"
-            android:gravity="left"
+            android:gravity="right"
             android:text="0123456789"
             android:textSize="15dp" />
 
         <TextView
-            android:id="@+id/textViewTotalQuantityProduct"
+            android:id="@+id/textViewOrderDate"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_gravity="center"
             android:layout_weight="3"
-            android:gravity="left"
+            android:gravity="center"
             android:text="0123456789"
             android:textSize="15dp" />
     </LinearLayout>
