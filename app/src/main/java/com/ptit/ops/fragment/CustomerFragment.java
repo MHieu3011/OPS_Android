@@ -16,6 +16,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.ptit.ops.AddActivity;
 import com.ptit.ops.R;
+import com.ptit.ops.UpdateActivity;
 import com.ptit.ops.adapter.RecycleViewCustomerAdapter;
 import com.ptit.ops.api.CustomerAPI;
 import com.ptit.ops.model.CustomerModel;
@@ -76,7 +77,9 @@ public class CustomerFragment extends Fragment implements RecycleViewCustomerAda
 
     @Override
     public void onItemClick(View view, int position) {
-        Intent intent = new Intent(getActivity(), AddActivity.class);
+        Intent intent = new Intent(getActivity(), UpdateActivity.class);
+        CustomerModel model = adapter.getModelList().get(position);
+        intent.putExtra("model", model);
         startActivity(intent);
     }
 }

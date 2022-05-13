@@ -4,13 +4,15 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="..\:/Entry_Test_FPT/OPS_Android/app/src/main/res/layout/activity_add.xml" value="0.20416666666666666" />
+        <entry key="..\:/Entry_Test_FPT/OPS_Android/app/src/main/res/layout/activity_add_customer.xml" value="0.20416666666666666" />
         <entry key="..\:/Entry_Test_FPT/OPS_Android/app/src/main/res/layout/activity_main.xml" value="0.22" />
+        <entry key="..\:/Entry_Test_FPT/OPS_Android/app/src/main/res/layout/activity_update.xml" value="0.20416666666666666" />
         <entry key="..\:/Entry_Test_FPT/OPS_Android/app/src/main/res/layout/fragment_customer.xml" value="0.20416666666666666" />
         <entry key="..\:/Entry_Test_FPT/OPS_Android/app/src/main/res/layout/fragment_order.xml" value="0.22" />
         <entry key="..\:/Entry_Test_FPT/OPS_Android/app/src/main/res/layout/fragment_product.xml" value="0.20416666666666666" />
         <entry key="..\:/Entry_Test_FPT/OPS_Android/app/src/main/res/layout/item_customer.xml" value="0.20416666666666666" />
         <entry key="..\:/Entry_Test_FPT/OPS_Android/app/src/main/res/layout/item_order.xml" value="0.20416666666666666" />
-        <entry key="..\:/Entry_Test_FPT/OPS_Android/app/src/main/res/layout/item_product.xml" value="0.20416666666666666" />
+        <entry key="..\:/Entry_Test_FPT/OPS_Android/app/src/main/res/layout/item_product.xml" value="0.25" />
         <entry key="..\:/Entry_Test_FPT/OPS_Android/app/src/main/res/menu/navigation.xml" value="0.20416666666666666" />
       </map>
     </option>

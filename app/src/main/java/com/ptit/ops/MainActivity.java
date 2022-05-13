@@ -1,7 +1,9 @@
 package com.ptit.ops;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.MenuItem;
+import android.view.View;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -9,12 +11,14 @@ import androidx.fragment.app.FragmentStatePagerAdapter;
 import androidx.viewpager.widget.ViewPager;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.ptit.ops.adapter.ViewPagerAdapter;
 
 public class MainActivity extends AppCompatActivity {
 
     private BottomNavigationView bottomNavigationView;
     private ViewPager viewPager;
+    private FloatingActionButton floatingActionButton;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -68,10 +72,19 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+        floatingActionButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(MainActivity.this, AddOrderActivity.class);
+                startActivity(intent);
+            }
+        });
+
     }
 
     private void initData() {
         bottomNavigationView = findViewById(R.id.bottomNavigationView);
         viewPager = findViewById(R.id.viewPager);
+        floatingActionButton = findViewById(R.id.floatingActionButton);
     }
 }

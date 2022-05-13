@@ -4,6 +4,8 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
+import android.widget.EditText;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
@@ -28,6 +30,8 @@ public class OrderFragment extends Fragment {
 
     private RecycleViewOrderAdapter adapter;
     private RecyclerView recyclerView;
+    private EditText editText;
+    private Button button;
 
     @Nullable
     @Override
@@ -39,6 +43,8 @@ public class OrderFragment extends Fragment {
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
         recyclerView = view.findViewById(R.id.recyclerViewOrder);
+        editText = view.findViewById(R.id.editTextCustomerIdSearch);
+        button = view.findViewById(R.id.buttonSearchOrder);
         adapter = new RecycleViewOrderAdapter();
         adapter.reload();
 
@@ -56,6 +62,29 @@ public class OrderFragment extends Fragment {
             @Override
             public void onFailure(Call<OrderResponse> call, Throwable t) {
                 Toast.makeText(getContext(), "Call API error", Toast.LENGTH_SHORT).show();
+            }
+        });
+
+        button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                int customerId = Integer.parseInt(editText.getText().toString());
+                OrderAPI.api.findByCustomerId(customerId).enqueue(new Callback<OrderResponse>() {
+                    @Override
+                    public void onResponse(Call<OrderResponse> call, Response<OrderResponse> response) {
+                        OrderResponse orderResponse = response.body();
+                        List<OrderModel> modelList = orderResponse.getOrders();
+                        adapter.setModelList(modelList);
+                        LinearLayoutManager manager = new LinearLayoutManager(getContext(), RecyclerView.VERTICAL, false);
+                        recyclerView.setLayoutManager(manager);
+                        recyclerView.setAdapter(adapter);
+                    }
+
+                    @Override
+                    public void onFailure(Call<OrderResponse> call, Throwable t) {
+                        Toast.makeText(getContext(), "No order has id: " + customerId, Toast.LENGTH_SHORT).show();
+                    }
+                });
             }
         });
     }

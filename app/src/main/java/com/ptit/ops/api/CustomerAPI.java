@@ -7,6 +7,7 @@ import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
 import retrofit2.http.GET;
 import retrofit2.http.POST;
+import retrofit2.http.PUT;
 import retrofit2.http.Query;
 
 public interface CustomerAPI extends BaseAPI {
@@ -22,6 +23,14 @@ public interface CustomerAPI extends BaseAPI {
 
     @POST("/customer")
     Call<CustomerResponse> create(
+            @Query("name") String name,
+            @Query("address") String address,
+            @Query("phone") String phone
+    );
+
+    @PUT("/customer")
+    Call<CustomerResponse> update(
+            @Query("id") int id,
             @Query("name") String name,
             @Query("address") String address,
             @Query("phone") String phone

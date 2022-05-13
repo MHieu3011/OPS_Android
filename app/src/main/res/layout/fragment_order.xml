@@ -19,6 +19,31 @@
             android:textColor="@color/white"
             android:textSize="30dp"
             android:textStyle="bold" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="20dp"
+            android:orientation="horizontal">
+
+            <EditText
+                android:id="@+id/editTextCustomerIdSearch"
+                android:layout_width="200dp"
+                android:layout_height="wrap_content"
+                android:background="@color/white"
+                android:hint=" CustomerId"
+                android:inputType="number"
+                android:textSize="20dp" />
+
+            <Button
+                android:id="@+id/buttonSearchOrder"
+                android:layout_width="150dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:background="#FF5722"
+                android:text="Search" />
+
+        </LinearLayout>
     </LinearLayout>
 
     <LinearLayout
@@ -35,8 +60,8 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:gravity="center"
             android:layout_weight="1"
+            android:gravity="center"
             android:text="ID"
             android:textSize="16dp"
             android:textStyle="bold" />
@@ -44,16 +69,16 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:gravity="left"
             android:layout_weight="3"
+            android:gravity="left"
             android:text="cusID"
             android:textStyle="bold" />
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:gravity="left"
             android:layout_weight="3"
+            android:gravity="left"
             android:text="productID"
             android:textSize="20dp" />
 
@@ -80,4 +105,5 @@
         android:layout_height="wrap_content"
         android:layout_marginLeft="15dp"
         android:layout_marginRight="10dp" />
+
 </LinearLayout>
